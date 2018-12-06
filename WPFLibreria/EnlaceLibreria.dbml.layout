@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="EnlaceLibreria">
+  <DataContextMoniker Name="/EnlaceLibreriaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7bb08089-62d3-45c0-91d9-0166578c92f5" absoluteBounds="0.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/EnlaceLibreriaDataContext/Editoriales" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e22b6098-3a2d-4859-b971-6c5d6431cc34" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80bb9cfd-b8a9-4e5c-9b8f-0b54e5cfaf0b" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/EnlaceLibreriaDataContext/Libros" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c129be8c-1cbe-4c74-a255-be7179861b86" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.94314697265625); (3.5 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/EnlaceLibreriaDataContext/Editoriales/Editoriales_Libros" />
+      <nodes>
+        <classShapeMoniker Id="7bb08089-62d3-45c0-91d9-0166578c92f5" />
+        <classShapeMoniker Id="80bb9cfd-b8a9-4e5c-9b8f-0b54e5cfaf0b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

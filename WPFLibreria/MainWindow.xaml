@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPFLibreria.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLibreria"
+        xmlns:vw="clr-namespace:WPFLibreria.Views"
+        Title="Libreria Main" Height="506" Width="770">
+    <Grid Margin="0,0,-8,-31">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="288*"/>
+            <ColumnDefinition Width="229*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/Libros.jpg"/>
+        </Grid.Background>
+        <Label   Content="Sistema de Libreria." HorizontalAlignment="Left" Margin="179,10,0,0" VerticalAlignment="Top" Height="52" Width="258" FontSize="24" FontWeight="Bold" FontStyle="Italic" Grid.ColumnSpan="2"/>
+        <Button Click="Consulta_Genero" Content="Consulta de Generos" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="206" FontSize="16" Height="26" FontWeight="Bold"/>
+        <Button Click="Consulta_Libros" Content="Consulta de Libros" HorizontalAlignment="Left" Height="24" Margin="241,62,0,0" VerticalAlignment="Top" Width="196" FontSize="16" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button Click="Button_Close" Margin="263,10,32,442" Grid.Column="1">
+            <Image Source="/Images/delete2.png" Height="30" Width="32" />
+        </Button>
+
+        <vw:LibroSeleccionView Margin="64,122,79,272" Grid.Column="1" RenderTransformOrigin="0.5,0.5" Loaded="LibroSeleccionView_Loaded">
+            <vw:LibroSeleccionView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.354"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </vw:LibroSeleccionView.RenderTransform>
+        </vw:LibroSeleccionView>
+        <local:Consulta_Libros Height="413" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
