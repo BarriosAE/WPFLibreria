@@ -45,23 +45,23 @@
 
             <TextBlock Foreground="DarkBlue" FontFamily="Bernard MT Condensed" Margin="7" >Editorial ID:</TextBlock>
             <TextBox Margin="5" Grid.Column="1" BorderBrush="{Binding Path=Stat.EditorialIDBrush}" BorderThickness="1"
-                     Text="{Binding Path=DisplayedProduct.EditorialID, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding Path=DisplayedLibro.EditorialID, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
             <TextBlock Foreground="DarkBlue" FontFamily="Bernard MT Condensed" Margin="7" Grid.Row="1">Nombre de Autor:</TextBlock>
             <TextBox  Margin="5" Grid.Row="1" Grid.Column="1" BorderBrush="{Binding Path=Stat.NombreAutorBrush}" BorderThickness="1"
-                     Text="{Binding Path=DisplayedProduct.NombreAutor, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding Path=DisplayedLibro.NombreAutor, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
             <TextBlock Foreground="DarkBlue" FontFamily="Bernard MT Condensed" Margin="7" Grid.Row="2">Precio Unitario:</TextBlock>
             <TextBox Margin="5" Grid.Row="2" Grid.Column="1"   BorderBrush="{Binding Path=Stat.PrecioUnitarioBrush}" BorderThickness="1"
-                     Text="{Binding Path=DisplayedProduct.PrecioUnitario, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding Path=DisplayedLibro.PrecioUnitario, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
             <TextBlock Foreground="DarkBlue" FontFamily="Bernard MT Condensed" Margin="7" Grid.Row="3">Genero:</TextBlock>
             <TextBox Margin="5" Grid.Row="3" Grid.Column="1"  BorderBrush="{Binding Path=Stat.GeneroBrush}" BorderThickness="1"
-                     Text="{Binding Path=DisplayedProduct.Genero, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding Path=DisplayedLibro.Genero, UpdateSourceTrigger=PropertyChanged}"></TextBox>
 
             <TextBlock Foreground="DarkBlue" FontFamily="Bernard MT Condensed" Margin="7,7,7,0" Grid.Row="4">Descripcion:</TextBlock>
             <TextBox Margin="7" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
-                 TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Text="{Binding Path=DisplayedProduct.Descricion}"></TextBox>
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Text="{Binding Path=DisplayedLibro.Descricion}"></TextBox>
 
             <TextBlock Foreground="DarkBlue" FontFamily="Bernard MT Condensed" Margin="7,25,15,0" Grid.Row="6">Status:</TextBlock>
             <TextBox Margin="7" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" 

@@ -30,11 +30,11 @@ namespace WPFLibreria.ViewModels
         }
 
 
-        private string nNombreAutor;
+        private string nombreAutor;
         public string NombreAutor
         {
-            get { return nNombreAutor; }
-            set { nNombreAutor = value; OnPropertyChanged(new PropertyChangedEventArgs("NombreAutor")); }
+            get { return nombreAutor; }
+            set { nombreAutor = value; OnPropertyChanged(new PropertyChangedEventArgs("NombreAutor")); }
         }
 
         private string precioUnitario;
@@ -64,12 +64,12 @@ namespace WPFLibreria.ViewModels
         {
         }
 
-        public Libro(int libroID, int editorialID, string nNombreAutor,
+        public Libro(int libroID, int editorialID, string nombreAutor,
                        string precioUnitario, string descricion, string categoryName)
         {
             this._libroID = libroID;
             EditorialID = editorialID;
-            NombreAutor = nNombreAutor;
+            NombreAutor = nombreAutor;
             PrecioUnitario = precioUnitario;
             Descricion = descricion;
             Genero = genero;

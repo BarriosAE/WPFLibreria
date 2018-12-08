@@ -104,9 +104,12 @@ namespace WPFLibreria.ViewModels
         public bool ChkLibroForAdd(Libro p)
         {
             int errCnt = 0;
-            if (string.IsNullOrEmpty(Convert.ToString( p.EditorialID)))
-            { errCnt++; EditorialIDBrush = errorBrush; }
-            else EditorialIDBrush = okBrush;
+           if (String.IsNullOrEmpty(Convert.ToString(p.EditorialID)))
+            {
+                errCnt++; EditorialIDBrush = errorBrush;
+            }
+            else
+                EditorialIDBrush = okBrush;
             if (String.IsNullOrEmpty(p.NombreAutor))
             { errCnt++; NombreAutorBrush = errorBrush; }
             else NombreAutorBrush = okBrush;
@@ -119,7 +122,7 @@ namespace WPFLibreria.ViewModels
 
             if (!ChkUnitCost(Convert.ToString(p.PrecioUnitario)))
             { errCnt++; PrecioUnitarioBrush = errorBrush; }
-
+           
             if (errCnt == 0) { Status = "OK"; return true; }
             else { Status = "ADD, missing or invalid fields."; return false; }
         } //ChkLibroForAdd()

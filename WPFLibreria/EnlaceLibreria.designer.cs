@@ -11,18 +11,18 @@
 
 namespace WPFLibreria
 {
-    using System.Data.Linq;
-    using System.Data.Linq.Mapping;
-    using System.Data;
-    using System.Collections.Generic;
-    using System.Reflection;
-    using System.Linq;
-    using System.Linq.Expressions;
-    using System.ComponentModel;
-    using System;
-    using WPFLibreria.ViewModels;
-
-    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibreriaBD")]
+	using System.Data.Linq;
+	using System.Data.Linq.Mapping;
+	using System.Data;
+	using System.Collections.Generic;
+	using System.Reflection;
+	using System.Linq;
+	using System.Linq.Expressions;
+	using System.ComponentModel;
+	using System;
+	
+	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="LibreriaBD")]
 	public partial class EnlaceLibreriaDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -84,6 +84,13 @@ namespace WPFLibreria
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateLibro")]
+		public int UpdateLibro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LibroID", DbType="Int")] System.Nullable<int> libroID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialID", DbType="Int")] System.Nullable<int> editorialID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreAutor", DbType="NVarChar(50)")] string nombreAutor, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Genero", DbType="NVarChar(50)")] string genero, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PrecioUnitario", DbType="Money")] System.Nullable<decimal> precioUnitario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descricion", DbType="NVarChar(50)")] string descricion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), libroID, editorialID, nombreAutor, genero, precioUnitario, descricion);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AddEditorial")]
 		public int AddEditorial([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialNombre", DbType="NVarChar(50)")] string editorialNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialDireccion", DbType="NVarChar(50)")] string editorialDireccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialID", DbType="Int")] ref System.Nullable<int> editorialID)
 		{
@@ -132,13 +139,6 @@ namespace WPFLibreria
 		public int UpdateEditorial([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialID", DbType="Int")] System.Nullable<int> editorialID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialNombre", DbType="NVarChar(50)")] string editorialNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialDireccion", DbType="NVarChar(50)")] string editorialDireccion)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), editorialID, editorialNombre, editorialDireccion);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateLibro")]
-		public int UpdateLibro([global::System.Data.Linq.Mapping.ParameterAttribute(Name="LibroID", DbType="Int")] System.Nullable<int> libroID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EditorialID", DbType="Int")] System.Nullable<int> editorialID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NombreAutor", DbType="NVarChar(50)")] string nombreAutor, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Genero", DbType="NVarChar(50)")] string genero, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PrecioUnitario", DbType="Money")] System.Nullable<decimal> precioUnitario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Descricion", DbType="NVarChar(50)")] string descricion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), libroID, editorialID, nombreAutor, genero, precioUnitario, descricion);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -502,12 +502,7 @@ namespace WPFLibreria
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-
-        public static explicit operator Libros(MyObservableCollection<Libro> v)
-        {
-            throw new NotImplementedException();
-        }
-    }
+	}
 	
 	public partial class GetEditorialesResult
 	{
